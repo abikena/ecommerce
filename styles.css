@@ -46,18 +46,6 @@ header .contenedorCarrito {
   font-weight: 500;
 }
 
-main h1 {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  text-align: center;
-  font-size: 30px;
-}
-main #contenedorProductos {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 20px;
-  padding: 3rem;
-}
-
 main section .formularioContacto {
   font-family: Georgia, "Times New Roman", Times, serif;
   padding: 2rem 25rem;
@@ -272,14 +260,43 @@ p {
   outline: none;
 }
 
-@media only screen and (max-width: 600px) {
-  main #contenedorProductos {
+@media only screen and (max-width: 667px) {
+  body {
+    background-image: url("/imagenes/inicio/fondo4.png");
+    background-size: cover;
+  }
+  main h1 {
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 650;
+    padding-top: 2rem;
+  }
+  main #contenedor-productos {
     grid-template-columns: 1fr 1fr;
     gap: 15px;
-    padding: 1rem;
+    padding: 1rem 1rem;
+    justify-content: space-between;
+  }
+  main .producto {
+    width: 220px;
+    height: 400px;
+    margin-right: 150px;
+    margin-left: 10px;
+    margin-bottom: 1px;
+  }
+  main .producto img {
+    height: 270px;
+    position: sticky;
+  }
+  main .producto h3 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 20px;
+  }
+  main .producto .precioProducto {
+    font-weight: 550;
   }
 }
-@media (min-width: 600px) {
+@media (min-width: 667px) {
   .galleryContainer {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -310,10 +327,10 @@ p {
     grid-row-start: span 2;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 667px) {
   header .contenido {
     position: absolute;
-    top: 60px;
+    top: 105px;
     left: 0;
     background: black;
     display: flex;
@@ -352,7 +369,7 @@ p {
     transform: translateX(0);
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 667px) {
   main section h1 {
     font-size: 20px;
   }

@@ -1,0 +1,39 @@
+@media only screen and (max-width: 667px){
+    body{
+        background-image: url("/imagenes/inicio/fondo4.png");
+        background-size: cover;
+    }
+    main {
+        h1{
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 650;
+            padding-top: 2rem;
+        }
+        #contenedor-productos {
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            padding: 1rem 1rem;
+            justify-content: space-between
+        }
+        .producto{
+            @include tamano (220px, 400px);
+            margin-right: 150px;
+            margin-left: 10px;
+            margin-bottom: 1px;
+            
+            img{
+                height: 270px;
+                position: sticky;
+            }
+            h3{
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: 20px;
+            }
+            .precioProducto{
+                font-weight: 550;
+            }
+        }
+    }
+}
+

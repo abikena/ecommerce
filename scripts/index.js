@@ -21,18 +21,18 @@ botonVaciar.addEventListener('click', () => {
 })
 
 let stockProductos = [
-    {id:1, nombre: "bajo pasivo", img:"./imagenes/bajo.gif", precio: 10500, cantidad: 1},
-    {id:2, nombre: "guitarra eletrica", img:"./imagenes/carrito/guitarra.png", precio: 13650, cantidad: 1},
-    {id:3, nombre: "teclado", img:"./imagenes/carrito/teclado.jpg", precio: 11800, cantidad: 1},
-    {id:4, nombre: "saxofon", img:"./imagenes/carrito/saxofon.jpg", precio: 4300, cantidad: 1},
-    {id:5, nombre: "pandero", img:"./imagenes/carrito/pandero.jpg", precio: 1500, cantidad: 1},
-    {id:6, nombre: "bateria", img:"./imagenes/carrito/bateria.jpg", precio: 19843, cantidad: 1},
-    {id:7, nombre: "violin", img:"./imagenes/carrito/violin.jpg", precio: 2500, cantidad: 1},
-    {id:8, nombre: "contrabajo", img:"./imagenes/carrito/contrabajo.jpg", precio: 3800, cantidad: 1},
-    {id:9, nombre: "plumilla", img:"./imagenes/carrito/plumilla.jfif", precio: 25, cantidad: 1},
-    {id:10, nombre: "amplificador", img:"./imagenes/carrito/amplificador.webp", precio: 1960, cantidad: 1},
-    {id:11, nombre: "bocina", img:"./imagenes/carrito/bocina.png", precio: 3320, cantidad: 1},
-    {id:12, nombre: "piano", img:"./imagenes/carrito/piano.webp", precio: 9946, cantidad: 1}
+    {id:1, nombre: "Bajo pasivo", img:"./imagenes/bajo.gif", precio: 10500, cantidad: 1},
+    {id:2, nombre: "Guitarra elétrica", img:"./imagenes/carrito/guitarra.png", precio: 13650, cantidad: 1},
+    {id:3, nombre: "Teclado", img:"./imagenes/carrito/teclado.jpg", precio: 11800, cantidad: 1},
+    {id:4, nombre: "Saxofón", img:"./imagenes/carrito/saxofon.jpg", precio: 4300, cantidad: 1},
+    {id:5, nombre: "Pandero", img:"./imagenes/carrito/pandero.jpg", precio: 1500, cantidad: 1},
+    {id:6, nombre: "Batería", img:"./imagenes/carrito/bateria.jpg", precio: 19843, cantidad: 1},
+    {id:7, nombre: "Violín", img:"./imagenes/carrito/violin.jpg", precio: 2500, cantidad: 1},
+    {id:8, nombre: "Contrabajo", img:"./imagenes/carrito/contrabajo.jpg", precio: 3800, cantidad: 1},
+    {id:9, nombre: "Plumilla", img:"./imagenes/carrito/plumilla.jfif", precio: 25, cantidad: 1},
+    {id:10, nombre: "Amplificador", img:"./imagenes/carrito/amplificador.webp", precio: 1960, cantidad: 1},
+    {id:11, nombre: "Bocina", img:"./imagenes/carrito/bocina.png", precio: 3320, cantidad: 1},
+    {id:12, nombre: "Piano", img:"./imagenes/carrito/piano.webp", precio: 9946, cantidad: 1}
 ]
 
 stockProductos.forEach((producto) => {
