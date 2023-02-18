@@ -11,7 +11,7 @@ main section p {
 main section h2 {
   font-size: 24px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  color: #334FFF;
+  color: #0626f0;
   padding-left: 5rem;
 }
 
@@ -74,7 +74,7 @@ main section .formularioContacto .inputEnviar {
   border-radius: 10px;
 }
 main section .formularioContacto .inputEnviar:hover {
-  background-color: #334FFF;
+  background-color: #0626f0;
 }
 
 .galleryContainer {
@@ -124,18 +124,18 @@ img {
 
 #boton-carrito {
   border: none;
-  color: royalblue;
-  font-size: 40px;
-  background-color: white;
-  border-radius: 50%;
+  color: #D4AF37;
+  font-size: 25px;
+  background-color: black;
+  border-radius: 100%;
   padding: 10px 20px;
   transition: all 0.3s;
 }
 
 #boton-carrito:hover {
   cursor: pointer;
-  color: white;
-  background-color: royalblue;
+  color: #D4AF37;
+  background-color: #0626f0;
 }
 
 #boton-carrito:focus {
@@ -145,33 +145,34 @@ img {
 #contenedor-productos {
   max-width: 1200px;
   margin: 60px auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 2rem;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 p {
-  line-height: 1.8;
+  line-height: 2;
 }
 
 .producto {
-  max-width: 20%;
-  padding: 10px;
-  margin: 10px;
+  max-width: 150%;
+  padding: 5px;
   margin-bottom: 20px;
-  box-shadow: 2px 6px 3px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 4px 7px 3px 5px rgba(0, 0, 0, 0.3);
 }
 
 .precioProducto {
-  font-weight: 700;
+  font-weight: 650;
 }
 
 .boton-agregar {
-  background-color: royalblue;
+  background-color: #0626f0;
   color: white;
-  font-size: 18px;
-  font-weight: 700;
-  padding: 5px;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 4px;
   border: none;
 }
 
@@ -204,7 +205,7 @@ p {
 
 .modal-carrito {
   position: relative;
-  background-color: white;
+  background-color: black;
   min-width: 500px;
   padding: 20px;
   margin-top: -100%;
@@ -216,7 +217,7 @@ p {
 }
 
 .modal-carrito h3 {
-  color: royalblue;
+  color: #0626f0;
   padding-bottom: 5px;
 }
 
@@ -225,9 +226,9 @@ p {
   top: 15px;
   right: 15px;
   font-size: 20px;
-  color: royalblue;
+  color: #0626f0;
   border: none;
-  background-color: white;
+  background-color: #0626f0;
 }
 
 .modal-carrito #carritoCerrar:hover {
@@ -253,7 +254,7 @@ p {
 }
 
 .productoEnCarrito:hover {
-  border-left: 5px solid royalblue;
+  border-left: 5px solid #0626f0;
 }
 
 .boton-eliminar {
