@@ -24,12 +24,7 @@
                 <a href="./conocenos.html">Historia</a>
                 <a href="./productos.html">Productos</a>
                 <a href="./contacto.html">Contacto</a>
-                <!-- <input class="buscador" type="text" name="busqueda" id="busqueda" placeholder="Buscar"> -->
-                <li id="contadorCarrito">
-                    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                        <iconify-icon class="carrito" icon="maki:grocery"></iconify-icon>
-                    </button>
-                </li>
+                <button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span></button>
             </div>
             <div class="elementos" id="_toggle">
                 <span></span>
@@ -40,33 +35,24 @@
     </header>
     <main>
         <h1>Instrumentos musicales</h1>
-        <section></section>
-        <section id="contenedorProductos"></section>
-        <aside>
-            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <table class="w-100">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th class="tituloTabla" scope="col">Producto</th>
-                                <th class="tituloTabla" scope="col">Cantidad</th>
-                                <th class="tituloTabla" scope="col">Precio</th>
-                                <th class="tituloTabla" scope="col">X</th>
-                            </tr>
-                        </thead>
-                        <tbody id="carritoOffcanvas"></tbody>
-                    </table>
-                <div class="mt-5 d-flex flex-column justify-content-center align-items-center">
-                    <p id="precioTotalCarrito">Precio Total: </p>
-                    <button id="terminarCompra" class="botonComprar">COMPRAR</button>
+        <div id="contenedor-productos">
+            <div class="modal-contenedor">
+                <div class="modal-carrito">
+                    <h3>Carrito</h3>
+                    <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+                    <div id="carrito-contenedor">
+                        <!-- <div class="productoEnCarrito">
+                            <p>Buzo 1</p>
+                            <p>Precio: $1200</p>
+                            <button class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
+                        </div> -->
+                    </div>
+                    <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
+                    <button id="vaciar-carrito" class="boton-agregar">Vaciar carrito</button>
+                    <button id="Comprar" class="botonComprar">Comprar productos</button>
                 </div>
             </div>
-        </aside>
+        </div>
     </main>
     <footer>
 
@@ -76,7 +62,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
+        <script src="./scripts/carrito.js"></script>
+        <script src="./scripts/modal.js"></script>
     <script src="./scripts/index.js"></script>
-    <script src="./scripts/carrito.js"></script>
 </body>
 </html>

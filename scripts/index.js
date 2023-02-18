@@ -1,79 +1,105 @@
-const contenedorProductos = document.getElementById("contenedorProductos");
-const contadorCarrito = document.getElementById ("contadorCarrito");
-const contador = document.createElement ("p");
-const carritoOffcanvas = document.getElementById("carritoOffcanvas");
+const contenedorProductos = document.getElementById('contenedor-productos')
+const contenedorCarrito = document.getElementById('carrito-contenedor')
+const botonVaciar = document.getElementById('vaciar-carrito')
+const contadorCarrito = document.getElementById('contadorCarrito')
+const cantidad = document.getElementById('cantidad')
+const precioTotal = document.getElementById('precioTotal')
+const cantidadTotal = document.getElementById('cantidadTotal')
 
+let carrito = []
 
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('carrito')){
+        carrito = JSON.parse(localStorage.getItem('carrito'))
+        actualizarCarrito()
+    }
+})
 
-const productos = [
-    {id:1, nombre: "bajo pasivo", imagen:"./imagenes/bajo.gif", precio: 10500, cantidad: 1},
-    {id:2, nombre: "guitarra eletrica", imagen:"./imagenes/carrito/guitarra elec.png", precio: 10500, cantidad: 1},
-    {id:3, nombre: "teclado", imagen:"./imagenes/carrito/teclado.jpg", precio: 10500, cantidad: 1},
-    {id:4, nombre: "saxofon", imagen:"./imagenes/carrito/saxofon.jpg", precio: 10500, cantidad: 1},
-    {id:5, nombre: "pandero", imagen:"./imagenes/carrito/pandero.jpg", precio: 10500, cantidad: 1},
-    {id:6, nombre: "bateria", imagen:"./imagenes/carrito/bateria.jpg", precio: 10500, cantidad: 1},
-    {id:7, nombre: "violin", imagen:"./imagenes/carrito/violin.jpg", precio: 10500, cantidad: 1},
-    {id:8, nombre: "contrabajo", imagen:"./imagenes/carrito/contrabajo.jpg", precio: 10500, cantidad: 1},
-    {id:9, nombre: "plumilla", imagen:"./imagenes/carrito/plumilla.jfif", precio: 10500, cantidad: 1},
-    {id:10, nombre: "amplificador", imagen:"./imagenes/carrito/amplificador.webp", precio: 10500, cantidad: 1},
-    {id:11, nombre: "bocina", imagen:"./imagenes/carrito/bocina.png", precio: 10500, cantidad: 1},
-    {id:12, nombre: "piano", imagen:"./imagenes/carrito/piano.webp", precio: 10500, cantidad: 1}
+botonVaciar.addEventListener('click', () => {
+    carrito.length = 0
+    actualizarCarrito()
+})
+
+let stockProductos = [
+    {id:1, nombre: "bajo pasivo", img:"./imagenes/bajo.gif", precio: 10500, cantidad: 1},
+    {id:2, nombre: "guitarra eletrica", img:"./imagenes/carrito/guitarra.png", precio: 13650, cantidad: 1},
+    {id:3, nombre: "teclado", img:"./imagenes/carrito/teclado.jpg", precio: 11800, cantidad: 1},
+    {id:4, nombre: "saxofon", img:"./imagenes/carrito/saxofon.jpg", precio: 4300, cantidad: 1},
+    {id:5, nombre: "pandero", img:"./imagenes/carrito/pandero.jpg", precio: 1500, cantidad: 1},
+    {id:6, nombre: "bateria", img:"./imagenes/carrito/bateria.jpg", precio: 19843, cantidad: 1},
+    {id:7, nombre: "violin", img:"./imagenes/carrito/violin.jpg", precio: 2500, cantidad: 1},
+    {id:8, nombre: "contrabajo", img:"./imagenes/carrito/contrabajo.jpg", precio: 3800, cantidad: 1},
+    {id:9, nombre: "plumilla", img:"./imagenes/carrito/plumilla.jfif", precio: 25, cantidad: 1},
+    {id:10, nombre: "amplificador", img:"./imagenes/carrito/amplificador.webp", precio: 1960, cantidad: 1},
+    {id:11, nombre: "bocina", img:"./imagenes/carrito/bocina.png", precio: 3320, cantidad: 1},
+    {id:12, nombre: "piano", img:"./imagenes/carrito/piano.webp", precio: 9946, cantidad: 1}
 ]
 
-const carritoDeCompras = [];
-
-productos.forEach (item => {
-    const div = document.createElement("div");
-    div.innerHTML +=
+stockProductos.forEach((producto) => {
+    const div = document.createElement('div')
+    div.classList.add('producto')
+    div.innerHTML = `
+    <img src=${producto.img} alt= "">
+    <h3>${producto.nombre}</h3>
+    <p>${producto.desc}</p>
+    <p>Talle: ${producto.talle}</p>
+    <p class="precioProducto">Precio:$ ${producto.precio}</p>
+    <button id="agregar${producto.id}" class="boton-agregar">Agregar <i class="fas fa-shopping-cart"></i></button>
     `
-    <div class="card" style="width: 18rem;">
-        <img src="${item.imagen}" class="card-img-top" alt="${item.nombre}">
-        <div class="card-body">
-            <h3 class="card-title">${item.nombre}</h3>
-            <p>PRECIO: $ ${item.precio}</p>
-            <button class="btn btn-primary" id="producto${item.id}">AGREGAR AL CARRITO</button>
-        </div>
-    </div>
-    `
-    contenedorProductos.appendChild(div);
+    contenedorProductos.appendChild(div)
 
-    const botonAgregarCarrito = document.getElementById (`producto${item.id}`)
-    botonAgregarCarrito.addEventListener ("click", ()=> {
-        agregarAlCarrito(item.id, carritoDeCompras);
-        agregarContadorCarrito();
-        mostrarCarrito();
+    const boton = document.getElementById(`agregar${producto.id}`)
+
+    boton.addEventListener('click', () => {
+        agregarAlCarrito(producto.id)
     })
 })
 
-const agregarAlCarrito = (productoSeleccionado, carrito)=> {
-    const productoElegido = productos.find (producto => producto.id === productoSeleccionado);
-    carrito.push (productoElegido);
-    console.log ("Se agrego al carrito", carrito);
-}
+const agregarAlCarrito = (prodId) => {
 
-const agregarContadorCarrito = ()=> {
-    if (carritoDeCompras.length !== 0){
-        contador.textContent = carritoDeCompras.length;
-        contador.classList.add("contenedorCarrito");
-        contadorCarrito.appendChild(contador);
+    const existe = carrito.some (prod => prod.id === prodId) 
+
+    if (existe){ 
+        const prod = carrito.map (prod => { 
+            if (prod.id === prodId){
+                prod.cantidad++
+            }
+        })
+    } else { 
+        const item = stockProductos.find((prod) => prod.id === prodId)
+        carrito.push(item)
     }
+    actualizarCarrito() 
 }
 
-const mostrarCarrito = ()=> {
-    carritoDeCompras.forEach(product => {
-        const tr = document.createElement("tr");
-        tr.innerHTML +=
+
+const eliminarDelCarrito = (prodId) => {
+    const item = carrito.find((prod) => prod.id === prodId)
+    const indice = carrito.indexOf(item) 
+    carrito.splice(indice, 1) 
+    actualizarCarrito() 
+    console.log(carrito)
+}
+
+const actualizarCarrito = () => {
+    contenedorCarrito.innerHTML = ""
+
+    carrito.forEach((prod) => {
+        const div = document.createElement('div')
+        div.className = ('productoEnCarrito')
+        div.innerHTML = `
+        <p>${prod.nombre}</p>
+        <p>Precio:$${prod.precio}</p>
+        <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
+        <button onclick="eliminarDelCarrito(${prod.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
         `
-        <td>
-            <img src="${product.imagen}" alt="${product.nombre}">
-        </td>
-        <td class="infoProducto">Instrumento ${product.nombre}</td>
-        <td class="infoProducto">${product.cantidad}</td>
-        <td class="infoProducto">${product.precio}</td>
-        <td class="infoProducto eliminarProducto">
-            <iconify-icon icon="material-symbols:delete-outline" class="deleteIconify" id="eliminar${product.id}"></iconify-icon>
-        </td>
-        `
-        carritoOffcanvas.appendChild(tr);
+
+        contenedorCarrito.appendChild(div)
+        
+        localStorage.setItem('carrito', JSON.stringify(carrito))
+
     })
+    contadorCarrito.innerText = carrito.length 
+    console.log(carrito)
+    precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad * prod.precio, 0)
 }
