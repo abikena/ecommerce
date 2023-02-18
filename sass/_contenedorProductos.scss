@@ -1,6 +1,6 @@
 main{
     h1 {
-        font-family: $tipografiaTitulos;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         text-align: center;
         font-size: 30px;
     }
@@ -8,5 +8,6 @@ main{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 20px;
+        padding: 3rem;
     }
 }

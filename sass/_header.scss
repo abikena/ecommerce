@@ -1,0 +1,21 @@
+header {
+    .navbar{
+        background: black;
+        height: 120px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo img{
+            width: 6rem;
+            margin: 15px;
+            border-radius: 100%;
+            margin-top: 0px;
+        }
+        .contenido a{
+            margin: 50px;
+            color: #D4AF37;
+            position: relative;
+            text-decoration: none;
+        }
+    }
+}

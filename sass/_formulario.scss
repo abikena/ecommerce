@@ -1,0 +1,22 @@
+main {
+    section {
+        .formularioContacto {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            padding: 2rem 25rem;
+            gap: 10px;
+            display: grid;
+            .inputEnviar {
+                margin: 0 auto;
+                width: 200px;
+                background-color: $colorSecundario;
+                padding: 1rem;
+                border: none;
+                color: white;
+                border-radius: 10px;
+                &:hover {
+                    background-color: $colorTerciario;
+                }
+            }
+        }
+    }
+}

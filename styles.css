@@ -1,7 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+body {
+  background-color: rgb(240, 235, 235);
+}
+
+header .navbar {
+  background: black;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .navbar .logo img {
+  width: 6rem;
+  margin: 15px;
+  border-radius: 100%;
+  margin-top: 0px;
+}
+header .navbar .contenido a {
+  margin: 50px;
+  color: #D4AF37;
+  position: relative;
+  text-decoration: none;
+}
+
+main h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-align: center;
+  font-size: 30px;
+}
 main #contenedorProductos {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 3rem;
+}
 
+main section .formularioContacto {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding: 2rem 25rem;
+  gap: 10px;
+  display: grid;
+}
+main section .formularioContacto .inputEnviar {
+  margin: 0 auto;
+  width: 200px;
+  background-color: black;
+  padding: 1rem;
+  border: none;
+  color: white;
+  border-radius: 10px;
+}
+main section .formularioContacto .inputEnviar:hover {
+  background-color: #334FFF;
+}
+
+@media only screen and (max-width: 600px) {
+  main #contenedorProductos {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 1rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  main section h1 {
+    font-size: 20px;
+  }
+  main section p {
+    font-family: "Times New Roman", Times, serif;
+    text-align: justify;
+    padding: 0.5rem 1rem;
+  }
+  main section .formularioContacto {
+    padding: 1rem 5rem;
+    gap: 15px;
+    display: grid;
+  }
+  main section .inputEnviar {
+    margin: 0 auto;
+    width: 200px;
+    background-color: black;
+    padding: 1rem;
+    border: none;
+    color: white;
+    border-radius: 10px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
