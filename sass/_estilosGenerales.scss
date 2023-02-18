@@ -1,3 +1,18 @@
 body {
     background-color: rgb(240, 235, 235);
 }
+main{
+    section{
+        p{
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            padding: 1rem 5rem;
+        }
+        h2{
+            font-size: 24px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: $colorTerciario;
+            padding-left: 5rem;
+        }
+    }
+}

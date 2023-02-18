@@ -3,6 +3,18 @@ body {
   background-color: rgb(240, 235, 235);
 }
 
+main section p {
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  padding: 1rem 5rem;
+}
+main section h2 {
+  font-size: 24px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #334FFF;
+  padding-left: 5rem;
+}
+
 header .navbar {
   background: black;
   height: 120px;
@@ -63,6 +75,46 @@ main section .formularioContacto .inputEnviar {
 }
 main section .formularioContacto .inputEnviar:hover {
   background-color: #334FFF;
+}
+
+.galleryContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 150px;
+  padding: 20px;
+  grid-gap: 10px;
+}
+
+.galleryItem {
+  position: relative;
+}
+
+.galleryImag {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.galleryTitle {
+  position: absolute;
+  bottom: 0;
+  color: #D4AF37;
+  background: linear-gradient(white, black);
+  width: 100%;
+  margin: 0;
+  padding: 2px;
+}
+
+.galleryItem:nth-child(4) {
+  grid-row-start: span 2;
+}
+
+.galleryItem:nth-child(2) {
+  grid-row-start: span 2;
+}
+
+.galleryItem:nth-child(1) {
+  grid-column-start: span 2;
 }
 
 img {
@@ -224,6 +276,37 @@ p {
     grid-template-columns: 1fr 1fr;
     gap: 15px;
     padding: 1rem;
+  }
+}
+@media (min-width: 600px) {
+  .galleryContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .galleryItem:nth-child(5) {
+    grid-row-start: span 2;
+  }
+  .galleryItem:nth-child(1) {
+    grid-row-start: span 2;
+  }
+  .galleryItem:nth-child(6) {
+    grid-row-start: span 2;
+  }
+}
+@media (min-width: 1024px) {
+  .galleryContainer {
+    grid-template-columns: repeat(5, 1fr);
+    width: 90%;
+    margin: auto;
+  }
+  .galleryItem:nth-child(3) {
+    grid-column-start: span 2;
+    grid-row-start: span 2;
+  }
+  .galleryItem:nth-child(8) {
+    grid-row-start: span 2;
+  }
+  .galleryItem:nth-child(6) {
+    grid-row-start: span 2;
   }
 }
 @media (max-width: 600px) {
