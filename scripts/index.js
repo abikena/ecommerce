@@ -1,9 +1,7 @@
-_toggle.onclick = () =>{
-    contenido1.classList.toggle("open")
-    _toggle.classList.toggle("close")
-}
-
-const contenedorProductos = document.getElementById("contenedorProductos")
+const contenedorProductos = document.getElementById("contenedorProductos");
+const contadorCarrito = document.getElementById ("contadorCarrito");
+const contador = document.createElement ("p");
+const carritoOffcanvas = document.getElementById("carritoOffcanvas");
 
 
 
@@ -22,9 +20,11 @@ const productos = [
     {id:12, nombre: "piano", imagen:"./imagenes/carrito/piano.webp", precio: 10500, cantidad: 1}
 ]
 
+const carritoDeCompras = [];
 
 productos.forEach (item => {
-    contenedorProductos.innerHTML +=
+    const div = document.createElement("div");
+    div.innerHTML +=
     `
     <div class="card" style="width: 18rem;">
         <img src="${item.imagen}" class="card-img-top" alt="${item.nombre}">
@@ -35,4 +35,45 @@ productos.forEach (item => {
         </div>
     </div>
     `
+    contenedorProductos.appendChild(div);
+
+    const botonAgregarCarrito = document.getElementById (`producto${item.id}`)
+    botonAgregarCarrito.addEventListener ("click", ()=> {
+        agregarAlCarrito(item.id, carritoDeCompras);
+        agregarContadorCarrito();
+        mostrarCarrito();
+    })
 })
+
+const agregarAlCarrito = (productoSeleccionado, carrito)=> {
+    const productoElegido = productos.find (producto => producto.id === productoSeleccionado);
+    carrito.push (productoElegido);
+    console.log ("Se agrego al carrito", carrito);
+}
+
+const agregarContadorCarrito = ()=> {
+    if (carritoDeCompras.length !== 0){
+        contador.textContent = carritoDeCompras.length;
+        contador.classList.add("contenedorCarrito");
+        contadorCarrito.appendChild(contador);
+    }
+}
+
+const mostrarCarrito = ()=> {
+    carritoDeCompras.forEach(product => {
+        const tr = document.createElement("tr");
+        tr.innerHTML +=
+        `
+        <td>
+            <img src="${product.imagen}" alt="${product.nombre}">
+        </td>
+        <td class="infoProducto">Instrumento ${product.nombre}</td>
+        <td class="infoProducto">${product.cantidad}</td>
+        <td class="infoProducto">${product.precio}</td>
+        <td class="infoProducto eliminarProducto">
+            <iconify-icon icon="material-symbols:delete-outline" class="deleteIconify" id="eliminar${product.id}"></iconify-icon>
+        </td>
+        `
+        carritoOffcanvas.appendChild(tr);
+    })
+}

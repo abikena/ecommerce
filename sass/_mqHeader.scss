@@ -1,0 +1,42 @@
+@media (max-width: 600px) {
+    header {
+        .contenido{
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background: black;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            transform: translateX(-100%);
+            transition: 300ms ease all;
+        }
+        .contenido {
+            text-align: center;
+        }
+        .elementos{
+            display: flex;
+            flex-direction: column;
+            margin: 15px;
+        }
+        .elementos span{
+            width: 30px;
+            height: 4px;
+            background: white;
+            margin-bottom: 5px;
+            border-radius: 2px;
+            transform-origin: 5px 0px;
+            transition: all 300ms linear;
+        }
+        .close span{
+            transform: rotate(45deg) translate(0px, 0px);
+        }
+        .close span:nth-child(2){
+            display: none;
+        }
+        .close span:nth-child(3){
+            transform: rotate(-45deg) translate(-5px, 1px);
+        }
+        .open{transform: translateX(0);}
+    }
+}
