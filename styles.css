@@ -110,6 +110,11 @@ img {
   margin-bottom: 10px;
 }
 
+h1 {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+}
+
 #boton-carrito {
   border: none;
   color: #D4AF37;
@@ -149,6 +154,12 @@ p {
   padding: 5px;
   margin-bottom: 20px;
   box-shadow: 4px 7px 3px 5px rgba(0, 0, 0, 0.3);
+}
+.producto img {
+  height: 300px;
+}
+.producto h3 {
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .precioProducto {
