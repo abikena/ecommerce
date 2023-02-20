@@ -2,10 +2,12 @@ img {
     width: 100%;
     margin-bottom: 10px;
 }
+
 h1{
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
 }
+
 #boton-carrito {
     border: none;
     color: #D4AF37;
@@ -15,11 +17,13 @@ h1{
     padding: 10px 20px;
     transition: all .3s;
 }
+
 #boton-carrito:hover {
     cursor: pointer;
     color: #D4AF37;
     background-color: #0626f0;
 }
+
 #boton-carrito:focus {
     outline: none;
 }
@@ -37,6 +41,7 @@ h1{
 p {
     line-height: 2;
 }
+
 .producto {
     max-width: 150%;
     padding: 5px;
@@ -49,9 +54,12 @@ p {
         font-family: Georgia, 'Times New Roman', Times, serif;
     }
 }
+
 .precioProducto {
     font-weight: 650;
+    color: white;
 }
+
 .boton-agregar {
     background-color: #0626f0;
     color: white;
@@ -60,9 +68,11 @@ p {
     padding: 4px;
     border: none;
 }
+
 .boton-agregar:hover {
     cursor: pointer;
 }
+
 .boton-agregar:focus {
     outline: none;
 }
@@ -103,6 +113,7 @@ p {
     color: #0626f0;
     padding-bottom: 5px;
 }
+
 .modal-carrito #carritoCerrar {
     position: absolute;
     top: 15px;
@@ -112,12 +123,15 @@ p {
     border: none;
     background-color: #0626f0;
 }
+
 .modal-carrito #carritoCerrar:hover {
     cursor: pointer;
 }
+
 .modal-carrito #carritoCerrar:focus {
     outline: none;
 }
+
 .modal-carrito .precioProducto {
     padding-top: 10px;
     
@@ -131,6 +145,7 @@ p {
     padding: 5px 10px;
     display: flex;
     justify-content: space-between;
+    color: white;
 }
 .productoEnCarrito:hover {
     border-left: 5px solid #0626f0;
