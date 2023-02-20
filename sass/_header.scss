@@ -29,4 +29,21 @@ header {
         font-size: 17px;
         font-weight: 500;
     }
+    .contenido a::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: #D4AF37;
+        transition: all 0.5s;
+    }
+    .contenido a:hover::before{
+        width: 100%;
+    }
+    
+    .elementos{
+        display: none;
+    }
 }

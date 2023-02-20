@@ -45,6 +45,22 @@ header .contenedorCarrito {
   font-size: 17px;
   font-weight: 500;
 }
+header .contenido a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #D4AF37;
+  transition: all 0.5s;
+}
+header .contenido a:hover::before {
+  width: 100%;
+}
+header .elementos {
+  display: none;
+}
 
 main section .formularioContacto {
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -164,7 +180,7 @@ p {
 
 .precioProducto {
   font-weight: 650;
-  color: white;
+  color: #D4AF37;
 }
 
 .boton-agregar {
